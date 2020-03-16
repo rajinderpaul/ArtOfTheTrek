@@ -115,6 +115,9 @@ extension AddTripViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd MMM yyyy"
         
+        if textField == endDateTextField {
+            datePicker.minimumDate = Date(timeIntervalSince1970: startDate)
+        }
         datePicker.rx.value.asObservable()
             .map { [weak self] date in
 
