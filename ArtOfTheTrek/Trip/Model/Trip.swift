@@ -21,7 +21,7 @@ public struct Trip: Codable {
 
 extension Trip: IdentifiableType {
     public var identity: String {
-        return name
+        return "\(Date().timeIntervalSince1970)"
     }
 }
 
